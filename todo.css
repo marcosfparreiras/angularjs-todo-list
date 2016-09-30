@@ -1,15 +1,12 @@
-.kkk {
-  align: center;
-  /*padding-left: 10px;*/
-  /*width: 50%;*/
-  /*margin: 0 auto;*/
-}
-
-body {
-  width: 200px;
+div.wrapper {
+  width: 500px;
+  height: 300px;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 20px;
+  border: 1px solid;
+  border-radius: 15px 50px;
 }
 
 .done-true {
