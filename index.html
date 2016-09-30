@@ -8,23 +8,21 @@
     <link rel="stylesheet" href="todo.css"></script>
   </head>
   <body>
-    <div class="wrapper" width="80%">
-      <div ng-controller="Todo">
-        <h3>Total Todos: {{getTotalTodos()}} </h3>
-        <ul class="unstyled">
-          <li ng-repeat="todo in todos">
-            <input type="checkbox" ng-model="todo.done"/>
-            <span class="done-{{todo.done}}">{{todo.text}}</span>
-          </li>
-        </ul>
-        <form class="form-horizontal">
-          <input type="text" ng-model="formTodoText" ng-model-instant placeholder="Enter a new todo">
-          <button class="btn" ng-click="addTodo()"><i class="icon-plus"></i> Add</button>
-          {{formTodoList}}
-        </form>
+    <div ng-controller="Todo" id="todolist">
+      <h3>Total Todos: {{getTotalTodos()}} </h3>
+      <ul class="unstyled">
+        <li ng-repeat="todo in todos">
+          <input type="checkbox" ng-model="todo.done"/>
+          <span class="done-{{todo.done}}">{{todo.text}}</span>
+        </li>
+      </ul>
+      <form class="form-horizontal">
+        <input type="text" ng-model="formTodoText" ng-model-instant placeholder="Enter a new todo">
+        <button class="btn" ng-click="addTodo()"><i class="icon-plus"></i> Add</button>
+        {{formTodoList}}
+      </form>
 
-        <button class="btn" ng-click="clearCompleted()"><i class="icon-trash"></i> Clear Completed</button>
-      </div>
+      <button class="btn" ng-click="clearCompleted()"><i class="icon-trash"></i> Clear Completed</button>
     </div>
   </body>
 </html>
