@@ -2,11 +2,20 @@
 <html ng-app="app">
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="todo.js"></script>
+    <script type="text/javascript" src="todo.js"></script>
+    <link rel="stylesheet" href="todo.css"></script>
   </head>
   <body>
     <div ng-controller="Todo">
       {{test}}
+
+      <ul>
+        <li ng-repeat="todo in todos">
+          <input type="checkbox" ng-model="todo.done"/>
+          <span class="done-{{todo.done}}">{{todo.text}}</span>
+          <!-- {{todo.text}} -->
+        </li>
+      </ul>
     </div>
   </body>
 </html>
