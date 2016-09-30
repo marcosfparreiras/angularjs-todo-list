@@ -4,18 +4,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script type="text/javascript" src="todo.js"></script>
     <link rel="stylesheet" href="todo.css"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
   <body>
     <div ng-controller="Todo">
-      {{test}}
-
+      <h3>Total Todos: {{getTotalTodos()}} </h3>
       <ul>
         <li ng-repeat="todo in todos">
           <input type="checkbox" ng-model="todo.done"/>
           <span class="done-{{todo.done}}">{{todo.text}}</span>
-          <!-- {{todo.text}} -->
         </li>
       </ul>
+      <form class="form-horizontal">
+        <input type="text" ng-model="formTodoText" ng-model-instant placeholder="Enter a new todo">
+        <button class="btn" ng-click="addTodo()"><i class="icon-plus"></i>Add</button>
+        {{formTodoList}}
+      </form>
     </div>
   </body>
 </html>
