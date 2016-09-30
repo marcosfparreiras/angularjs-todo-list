@@ -7,8 +7,8 @@ app.controller('Todo', function($scope) {
     }
 
     $scope.todos = [
-      {text:'First task, done:false'},
-      {text:'Second task, done:false'}
+      {text:'First task', done:false},
+      {text:'Second task', done:false}
     ];
 
     $scope.addTodo = function() {
@@ -18,5 +18,11 @@ app.controller('Todo', function($scope) {
       }
       $scope.todos.push(newTodo);
       $scope.formTodoText = "";
+    }
+
+    $scope.clearCompleted = function() {
+      $scope.todos = _.filter($scope.todos, function(todo) {
+        return !todo.done;
+      });
     }
 });
